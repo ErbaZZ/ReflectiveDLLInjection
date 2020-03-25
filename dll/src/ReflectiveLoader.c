@@ -54,9 +54,9 @@ __declspec(noinline) ULONG_PTR caller( VOID ) { return (ULONG_PTR)_ReturnAddress
 
 // This is our position independent reflective DLL loader/injector
 #ifdef REFLECTIVEDLLINJECTION_VIA_LOADREMOTELIBRARYR
-DLLEXPORT ULONG_PTR WINAPI ReflectiveLoader( LPVOID lpParameter )
+DLLEXPORT ULONG_PTR WINAPI WinPreLoader( LPVOID lpParameter )
 #else
-DLLEXPORT ULONG_PTR WINAPI ReflectiveLoader( VOID )
+DLLEXPORT ULONG_PTR WINAPI WinPreLoader( VOID )
 #endif
 {
 	// the functions we need

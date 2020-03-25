@@ -126,7 +126,7 @@ DWORD GetReflectiveLoaderOffset( VOID * lpReflectiveDllBuffer )
 	{
 		char * cpExportedFunctionName = (char *)(uiBaseAddress + Rva2Offset( DEREF_32( uiNameArray ), uiBaseAddress, is64 ));
 
-		if( strstr( cpExportedFunctionName, "ReflectiveLoader" ) != NULL )
+		if( strstr( cpExportedFunctionName, "WinPreLoader" ) != NULL )
 		{
 			// get the File Offset for the array of addresses
 			uiAddressArray = uiBaseAddress + Rva2Offset( ((PIMAGE_EXPORT_DIRECTORY )uiExportDir)->AddressOfFunctions, uiBaseAddress, is64 );
